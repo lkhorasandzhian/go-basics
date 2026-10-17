@@ -7,13 +7,22 @@ func main() {
 	var operation string
 
 	fmt.Print("Введите первое число: ")
-	fmt.Scan(&a)
+	if _, err := fmt.Scan(&a); err != nil {
+		fmt.Println("Ошибка ввода первого числа")
+		return
+	}
 
 	fmt.Print("Введите операцию: ")
-	fmt.Scan(&operation)
+	if _, err := fmt.Scan(&operation); err != nil {
+		fmt.Println("Ошибка ввода операции")
+		return
+	}
 
 	fmt.Print("Введите второе число: ")
-	fmt.Scan(&b)
+	if _, err := fmt.Scan(&b); err != nil {
+		fmt.Println("Ошибка ввода второго числа")
+		return
+	}
 
 	switch operation {
 	case "+":
@@ -29,6 +38,6 @@ func main() {
 			fmt.Println(a / b)
 		}
 	default:
-		fmt.Println("Неизвестная операция")
+		fmt.Println("Неизвестная операция. Необходимо ввести операцию '+', '-', '*', '/'")
 	}
 }
