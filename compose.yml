@@ -1,0 +1,12 @@
+services:
+  go:
+    image: golang:1.27
+    working_dir: /workspace
+
+    volumes:
+      - .:/workspace
+
+    stdin_open: true
+    tty: true
+
+    command: sleep infinity
